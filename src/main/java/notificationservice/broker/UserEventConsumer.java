@@ -22,7 +22,6 @@ public class UserEventConsumer {
             UserEvent event = objectMapper.readValue(message, UserEvent.class);
             userService.sendEmail(event.getEmail(), event.getOperation());
         } catch (Exception e) {
-            // Логируем ошибки
             e.printStackTrace();
         }
     }
